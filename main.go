@@ -13,9 +13,9 @@ func main() {
 	router.HandleFunc("/words", addWord).Methods("POST")
 	router.HandleFunc("/words", getAllWords).Methods("GET")
 	router.HandleFunc("/words/{id}", getWord).Methods("GET")
-	//router.HandleFunc("/word/{id}", deleteWord).Methods("DELETE")
-	//router.HandleFunc("/words/{id}", patchWord).Methods("PATCH")
-	//router.HandleFunc("/words/{id}", updateWord).Methods("PUT")
+	router.HandleFunc("/words/{id}", deleteWord).Methods("DELETE")
+	router.HandleFunc("/words/{id}", patchWord).Methods("PATCH")
+	router.HandleFunc("/words/{id}", updateWord).Methods("PUT")
 
 	http.ListenAndServe(":5000", router)
 }
